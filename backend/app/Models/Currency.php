@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Currency extends Model
 {
+     use HasFactory;
+
     protected $table = 'currencies';
 
     protected $fillable = [
@@ -15,5 +18,9 @@ class Currency extends Model
         'hundredths_name',
         'country',
         'auto_exchange_rate_update',
+    ];
+
+    protected $casts = [
+        'auto_exchange_rate_update' => 'boolean',
     ];
 }
