@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\SalesAreaController;
+use App\Http\Controllers\SalesGroupController;
+use App\Http\Controllers\SalesTypeController;
 use App\Http\Controllers\UserManagementController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,3 +18,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanc
 
 Route::resource("user-managements", UserManagementController::class);
 Route::resource("currencies", CurrencyController::class);
+
+Route::resource("sales-groups", SalesGroupController::class);
+Route::resource("sales-areas", SalesAreaController::class);
+Route::resource("sales-types", SalesTypeController::class);
