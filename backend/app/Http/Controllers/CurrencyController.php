@@ -36,6 +36,13 @@ class CurrencyController extends Controller
             'currency_name' => 'required|string|max:255',
             'hundredths_name' => 'nullable|string|max:255',
             'country' => 'required|string|max:255',
+            'auto_exchange_rate_update' => 'boolean'
+        ]);
+
+        $currency = Currency::create($validatedData);
+
+        return response()->json($currency, 201);
+
             'auto_exchange_rate_update' => 'sometimes|boolean'
         ]);
 

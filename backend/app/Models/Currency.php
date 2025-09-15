@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Currency extends Model
 {
+
      use HasFactory;
 
     protected $table = 'currencies';
@@ -19,6 +22,7 @@ class Currency extends Model
         'country',
         'auto_exchange_rate_update',
     ];
+
 
     protected $casts = [
         'auto_exchange_rate_update' => 'boolean',
