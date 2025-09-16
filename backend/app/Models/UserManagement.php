@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,12 +10,6 @@ use Laravel\Sanctum\HasApiTokens;
 class UserManagement extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
-=======
-use Illuminate\Database\Eloquent\Model;
-
-class UserManagement extends Model
-{
 
     protected $table = 'user_managements';
 
@@ -32,7 +25,6 @@ class UserManagement extends Model
         'role',
         'status'
     ];
-
 
     /**
      * The attributes that should be hidden for serialization.
@@ -57,5 +49,3 @@ class UserManagement extends Model
         ];
     }
 }
-}
-

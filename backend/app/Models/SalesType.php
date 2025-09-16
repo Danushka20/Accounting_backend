@@ -12,14 +12,14 @@ class SalesType extends Model
     protected $table = 'sales_types';
 
     protected $fillable = [
-        'type_name',
+        'typeName',
         'factor',
-        'tax_incl',
+        'taxIncl',
         'status'
     ];
 
     protected $casts = [
         'factor' => 'decimal:2',
-        'tax_incl' => 'boolean',
+        'taxIncl' => 'boolean',
     ];
 }

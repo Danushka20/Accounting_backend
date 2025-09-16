@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\SalesType;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
 class SalesTypeController extends Controller
 {
@@ -23,10 +22,10 @@ class SalesTypeController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'type_name' => 'required|string|max:255|unique:sales_types,type_name',
+            'typeName' => 'required|string|max:255',
             'factor' => 'required|numeric',
-            'tax_incl' => 'required|boolean',
-            'status' => 'required|in:Active,Inactive'
+            'taxIncl' => 'required|boolean',
+            'status' => 'nullable|in:Active,Inactive'
         ]);
 
         $salesType = SalesType::create($validatedData);
@@ -60,14 +59,14 @@ class SalesTypeController extends Controller
         }
 
         $validatedData = $request->validate([
-            'type_name' => [
+            'typeName' => [
                 'required',
                 'string',
                 'max:255',
             ],
             'factor' => 'required|numeric',
-            'tax_incl' => 'required|boolean',
-            'status' => 'required|in:Active,Inactive'
+            'taxIncl' => 'required|boolean',
+            'status' => 'nullable|in:Active,Inactive'
         ]);
 
         $salesType->update($validatedData);
