@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sales_types', function (Blueprint $table) {
             $table->id();
             $table->string('typeName');
-            $table->decimal('factor', 10, 2);
+            $table->decimal('factor', 10, 1);
             $table->boolean('tax_incl')->default(true);
             $table->enum('status', ['Active', 'Inactive'])->default('Active');
             $table->timestamps();

@@ -19,7 +19,7 @@ class SalesType extends Model
     ];
 
     protected $casts = [
-        'factor' => 'decimal:2',
+        'factor' => 'decimal:1',
         'taxIncl' => 'boolean',
     ];
 }

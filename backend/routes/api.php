@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\FiscalYearController;
 use App\Http\Controllers\SalesAreaController;
 use App\Http\Controllers\SalesGroupController;
 use App\Http\Controllers\SalesTypeController;
@@ -18,6 +19,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanc
 
 Route::resource("user-managements", UserManagementController::class);
 Route::resource("currencies", CurrencyController::class);
+Route::resource("fiscal-years", FiscalYearController::class);
 
 Route::resource("sales-groups", SalesGroupController::class);
 Route::resource("sales-areas", SalesAreaController::class);
