@@ -114,7 +114,7 @@ class UserManagementController extends Controller
             $user->password = bcrypt($validatedData['password']);
         }
 
-        $user->rolse = $validatedData['role'];
+        $user->role = $validatedData['role'];
         $user->status = $validatedData['status'];
 
         $user->save();
