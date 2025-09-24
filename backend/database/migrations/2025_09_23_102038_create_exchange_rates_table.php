@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sales_types', function (Blueprint $table) {
+        Schema::create('exchange_rates', function (Blueprint $table) {
             $table->id();
-            $table->string('typeName');
-            $table->decimal('factor', 10, 1);
-            $table->boolean('taxIncl')->default(true);
-            $table->enum('status', ['Active', 'Inactive'])->default('Active');
+            $table->char('curr_code', 3)->default('');
+            $table->double('rate_buy')->default(0);
+            $table->double('rate_sell')->default(0);
+            $table->date('date')->useCurrent();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sales_types');
+        Schema::dropIfExists('exchange_rates');
     }
 };

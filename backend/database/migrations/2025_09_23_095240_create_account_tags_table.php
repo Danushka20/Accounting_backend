@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sales_types', function (Blueprint $table) {
+        Schema::create('account_tags', function (Blueprint $table) {
             $table->id();
-            $table->string('typeName');
-            $table->decimal('factor', 10, 1);
-            $table->boolean('taxIncl')->default(true);
-            $table->enum('status', ['Active', 'Inactive'])->default('Active');
+            $table->smallInteger('type');
+            $table->string('name', 30);
+            $table->string('description', 60)->nullable();
+            $table->boolean('inactive')->default(0);
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sales_types');
+        Schema::dropIfExists('account_tags');
     }
 };

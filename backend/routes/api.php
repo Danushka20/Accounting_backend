@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AccountTagController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\ExchangeRateController;
 use App\Http\Controllers\FiscalYearController;
 use App\Http\Controllers\SalesAreaController;
 use App\Http\Controllers\SalesGroupController;
@@ -28,3 +30,6 @@ Route::apiResource('tax-groups', TaxGroupController::class);
 Route::resource("sales-groups", SalesGroupController::class);
 Route::resource("sales-areas", SalesAreaController::class);
 Route::resource("sales-types", SalesTypeController::class);
+
+Route::apiResource('account-tags', AccountTagController::class);
+Route::apiResource('exchange-rates', ExchangeRateController::class);
